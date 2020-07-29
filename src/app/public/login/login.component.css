@@ -1,0 +1,135 @@
+html,body{font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #2f4050;
+  font-size: 13px;
+  color: #676a6c;
+  text-align: center;
+  padding: auto;
+  display: block;
+  height: 900px;
+  margin: 0;
+  position: static;
+  overflow-x: hidden;
+  line-height: 1.42857143;
+  }
+  *{
+    box-sizing: border-box;
+  }
+  a{
+    color: #337ab7;
+  text-decoration: none;
+  }
+  #fmhacaLogo_login img{
+      padding-top: 40px;
+      height:150px;
+      width:100px;
+    }
+    img {
+      vertical-align: middle;
+  }
+    #fmhacaLogo_login p{
+      
+      font-size:100%;
+      color: white;
+      padding: 6px 13px;
+    
+    }
+   
+      .middle-box {
+        max-width: 400px;
+        z-index: 100;
+        margin: 0 auto;
+        padding-top: 40px;
+    } 
+    .form-control {
+      border: 1px solid #e5e6e7;
+      border-radius: 1px;
+      display: block;
+      padding: 6px 12px;
+      width: 100%;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    .loginscreen.middle-box {
+      width: 300px;
+      padding: auto;
+  
+    }
+    .btn-primary {
+      background-color: #1ab394;
+      border-color: #1ab394;
+      color: #FFFFFF;
+      border-radius: 1px;
+      padding: 6px 12px;
+      font-size: 14px;
+      width: 100%;
+      margin-bottom: 15px;
+      display: block;
+      margin-top: 10px;
+  }
+  
+  @-webkit-keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translatey(-120px);
+        -moz-transform: translatey(-120px);
+        -o-transform: translatey(-120px);
+        transform: translatey(-120px);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translatey(0);
+        -moz-transform: translatey(0);
+        -o-transform: translatey(0);
+        transform: translatey(0);
+    }
+}
+
+@-moz-keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translatey(-120px);
+        -moz-transform: translatey(-120px);
+        -o-transform: translatey(-120px);
+        transform: translatey(-120px);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translatey(0);
+        -moz-transform: translatey(0);
+        -o-transform: translatey(0);
+        transform: translatey(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translatey(-120px);
+        -moz-transform: translatey(-120px);
+        -o-transform: translatey(-120px);
+        transform: translatey(-120px);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translatey(0);
+        -moz-transform: translatey(0);
+        -o-transform: translatey(0);
+        transform: translatey(0);
+    }
+}
+
+.in-down {
+    -webkit-animation-name: fadeInDown;
+    -moz-animation-name: fadeInDown;
+    -o-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+}
+  
