@@ -132,4 +132,7 @@ html,body{font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-ser
     -o-animation-duration: 1s;
     animation-duration: 1s;
 }
-  
+#red{
+  color: red;
+  font-weight: 100;
+}

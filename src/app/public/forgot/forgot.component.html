@@ -4,16 +4,35 @@
             <h2>Request password reset</h2>
             <br/>
             <h4>Please provide your username</h4>
-            <form name="forgotForm" class="m-t" role="form"  ng-validate-form="forgotValidation" ng-submit="submitEmail()" novalidate>
+            <form name="forgotForm" 
+                  [formGroup]="form"
+                  class="m-t" role="form"  
+                  ng-validate-form="forgotValidation" 
+                  ng-submit="submitEmail()" novalidate>
                 <div class="form-group">
-                    <input type="text" name="username" class="form-control" placeholder="Username" ng-model="forgotModel.username" ng-validate="forgotValidation.username">
-                    <p ng-if="!forgotValidation.username && forgotValidation.$showError" class="help-block text-danger">Username is required</p>
+                    <input type="text" 
+                           name="username" 
+                           formControlName="userName"
+                           class="form-control" placeholder="Username" 
+                           ng-model="forgotModel.username" ng-validate="forgotValidation.username"
+                    >
+                        <div class="invalid-feedback" *ngIf="form.get('userName').touched && form.get('userName').invalid" >
+                            <div class="alert alert-danger" id="red">Username is required</div>
+                        </div>
                 </div>
-               <!-- <div class="form-group">
-                    <input type="email" class="form-control" name="Email" placeholder="Email" ng-model="forgotModel.email" ng-validate="forgotValidation.email">
-                    <p ng-show="!forgotValidation.email && forgotValidation.$showError && !forgotForm.Email.$touched" class="help-block text-danger">Email is required</p>
-                    <p ng-show="!forgotForm.Email.$valid && forgotForm.Email.$touched" class="help-block text-danger">Invalid Email address</p>
-                </div>-->
+             <div class="form-group">
+                    <input type="email" 
+                        class="form-control" 
+                        formControlName="email" 
+                        name="Email" placeholder="Email" 
+                        ng-model="forgotModel.email" ng-validate="forgotValidation.email"
+                    >
+                
+                <div class="invalid-feedback" *ngIf="form.get('email').touched && form.get('email').invalid">
+                    <div  *ngIf="form.get('email').errors.required"  class="alert alert-danger" id="red">Email is required</div>
+                    <div  *ngIf="form.get('email').errors.email"  class="alert alert-danger" id="red">Invalid Email address</div>
+                </div>
+            </div>
                 <button type="submit" class="btn btn-primary block full-width m-b">Submit</button>
             </form>
             <a routerLink="/login" routerLinkActive="active"><small>Back to login</small></a>

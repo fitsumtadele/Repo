@@ -85,4 +85,6 @@ a{
     -o-animation-duration: 1s;
     animation-duration: 1s;
 }
-  
+#red{
+    color: red;
+}

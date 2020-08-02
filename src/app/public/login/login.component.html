@@ -11,19 +11,44 @@
         <p>FOOD, MEDICINE AND HEALTH CARE ADMINISTRATION AND CONTROL AUTHORITY OF ETHIOPIA</p>
     </div>
     <div>
-        <!--<h2>Welcome to iImport</h2>-->
+        <h2>Welcome to iImport</h2>
         <br/>
-        <form name="loginForm"  class="m-t" role="form" ng-validate-form="loginModelValidation" ng-submit="Authenticate()">
+        <form name="loginForm"  
+              [formGroup]="form" 
+              class="m-t" role="form" 
+              ng-validate-form="loginModelValidation" 
+              ng-submit="Authenticate()"
+              >
             <div class="form-group">
-                <input type="text" name="username" id="userName"class="form-control" placeholder="Username" ng-model="loginModel.UserName" ng-validate="loginModelValidation.username">
-                <p *ngIf="!loginModelValidation.username && showError" class="help-block text-danger">Username is required</p>
+                <input type="text"
+                    class="form-control"
+                    name="username" 
+                    formControlName="userName"
+                    id="userName"
+                    placeholder="Username" 
+                 >
+                 <div class="invalid-feedback"  *ngIf="form.get('userName').touched && form.get('userName').invalid">
+                <div class=" alert alert-danger" id="red">Username is required</div>
+                </div>
             </div>
             <div class="form-group">
-                <input type="password" id="userPw" class="form-control" placeholder="Password" ng-model="loginModel.Password" ng-validate="loginModelValidation.password">
-                <p *ngIf="!loginModelValidation.password && showError" class="help-block text-danger">Password is required</p>
-            </div>
+                <input type="password"
+                    id="userPw"
+                    formControlName="password" 
+                    class="form-control" 
+                    placeholder="Password" 
+                    ng-model="loginModel.Password" 
+                    ng-validate="loginModelValidation.password"
+                >
+                <div class="invalid-feedback"  *ngIf="form.get('password').touched && form.get('password').invalid">
+                    <div *ngIf="form.get('password').errors.required" 
+                        class=" alert alert-danger" id="red">Password is required</div>
+                    <div *ngIf="form.get('password').errors.minlength" 
+                        class=" alert alert-danger" id="red">Password must be atleast 6</div>
+                </div>         
+           </div>
             <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
-           <p *ngIf="loginFailed" class="help-block text-danger">Incorrect username or password</p>
+        <!--   <p *ngIf="loginFailed" class="help-block text-danger">Incorrect username or password</p>-->
             <a routerLink="/home" routerLinkActive="active"><small>Home</small></a><br/>
             <a routerLink="/forgot" routerLinkActive="active"><small>Forgot password?</small></a>
         </form>

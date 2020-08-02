@@ -5,6 +5,7 @@ import { AccountService } from '../../account.service';
 import { Location } from '@angular/common';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 
@@ -13,9 +14,12 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.less']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent  {
 
-
+form = new FormGroup({
+    userName : new FormControl('', Validators.required),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)])
+})
   constructor(public commonservice: CommonService, public accountservice: AccountService, public location: Location, public deviceDetector: DeviceDetectorService, public router: Router) { 
     
   }
@@ -47,12 +51,7 @@ export class LoginComponent implements OnInit {
   loginFailed = false;
 
   Authenticate = function () {
-      this.showError = true;
-      let pageTitle = this.Title.original();
-      if (pageTitle !== "iImport") { //If original title stored is not "iImport", set it to "iImport".
-          this.Title.original("iImport");
-      }
-      this.Title.restore();
+
       if (this.loginModelValidation.isValid) {
           this.accountservice.login(this.loginModel)
               .then(function(result) {
