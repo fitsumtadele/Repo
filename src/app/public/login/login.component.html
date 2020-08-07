@@ -16,8 +16,7 @@
         <form name="loginForm"  
               [formGroup]="form" 
               class="m-t" role="form" 
-              ng-validate-form="loginModelValidation" 
-              ng-submit="Authenticate()"
+              (ngSubmit)="Authenticate()"
               >
             <div class="form-group">
                 <input type="text"
@@ -26,8 +25,10 @@
                     formControlName="userName"
                     id="userName"
                     placeholder="Username" 
+                    [ngClass]="{'is-invalid': submitted && f.userName.errors}"
+                    
                  >
-                 <div class="invalid-feedback"  *ngIf="form.get('userName').touched && form.get('userName').invalid">
+                 <div class="invalid-feedback"  *ngIf="submitted && f.userName.errors">
                 <div class=" alert alert-danger" id="red">Username is required</div>
                 </div>
             </div>
@@ -36,19 +37,21 @@
                     id="userPw"
                     formControlName="password" 
                     class="form-control" 
-                    placeholder="Password" 
-                    ng-model="loginModel.Password" 
-                    ng-validate="loginModelValidation.password"
+                    placeholder="Password"
+                    [ngClass]="{'is-invalid': submitted && f.password.errors}"
+                   
+
                 >
-                <div class="invalid-feedback"  *ngIf="form.get('password').touched && form.get('password').invalid">
-                    <div *ngIf="form.get('password').errors.required" 
+                <div class="invalid-feedback"  *ngIf="submitted && f.password.errors"
+                >
+                    <div *ngIf="f.password.errors.required" 
                         class=" alert alert-danger" id="red">Password is required</div>
-                    <div *ngIf="form.get('password').errors.minlength" 
+                    <div *ngIf="f.password.errors.minlength" 
                         class=" alert alert-danger" id="red">Password must be atleast 6</div>
                 </div>         
            </div>
-            <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
-        <!--   <p *ngIf="loginFailed" class="help-block text-danger">Incorrect username or password</p>-->
+            <button  class="btn btn-primary block full-width m-b">Login</button>
+           <p *ngIf="loginFailed" class="alert alert-danger" id="red">Incorrect username or password</p>
             <a routerLink="/home" routerLinkActive="active"><small>Home</small></a><br/>
             <a routerLink="/forgot" routerLinkActive="active"><small>Forgot password?</small></a>
         </form>

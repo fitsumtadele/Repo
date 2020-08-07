@@ -38,9 +38,9 @@
           <table datatable [dtOptions]="dtOptions" class="row-border hover">
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Contact Name</th>
-                <th>Phone</th>
+                <th>id</th>
+                <th>firstName</th>
+                <th>lastName</th>
                 <th>Email</th>
                 <th>Type</th>
                 <th>Country</th>
@@ -49,9 +49,9 @@
             </thead>
             <tbody *ngIf="persons?.length != 0">
                 <tr *ngFor="let person of persons">
-                    <td>{{ person.Name }}</td>
-                    <td>{{ person.ContactName }}</td>
-                    <td>{{ person.Phone }}</td>
+                    <td>{{ person.id }}</td>
+                    <td>{{ person.firstName }}</td>
+                    <td>{{ person.lastName }}</td>
                     <td>{{ person.Email }}</td>
                     <td>{{ person.Type }}</td>
                     <td>{{ person.Country }}</td>

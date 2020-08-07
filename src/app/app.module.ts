@@ -7,7 +7,7 @@ import { AppRoutingModule, routingComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataTablesModule } from 'angular-datatables';
 import { ApplicantsComponent } from './public/applicants/applicants.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -23,7 +23,9 @@ ApplicantsComponent
     HttpClientModule,
     DeviceDetectorModule,
     DataTablesModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

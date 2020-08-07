@@ -4,6 +4,10 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { CommonService } from 'src/app/common.service';
 
 class Person {
+  id: Number;
+  firstName: string;
+  lastName: string;
+  /*
   Name: string;
   ContactName: string;
   Phone: Number;
@@ -11,6 +15,7 @@ class Person {
   Type: string;
   Country: string;
   Status: string;
+*/
 }
 
 class DataTablesResponse {
@@ -36,16 +41,17 @@ export class ApplicantsComponent implements OnInit {
 
     this.dtOptions = {
       pagingType: 'full_numbers',
-      pageLength: 2,
+      pageLength: 3,
       
       processing: true,
       ajax: (dataTablesParameters: any, callback) => {
         this.http
           .post<DataTablesResponse>(
-            'http://192.168.2.81:8084/api/Public/Agent/List',
+            'https://angular-datatables-demo-server.herokuapp.com/',
             dataTablesParameters, {}
           ).subscribe(resp => {
             this.persons = resp.data;
+            console.log(resp);
 
             callback({
               recordsTotal: resp.recordsTotal,
@@ -54,13 +60,14 @@ export class ApplicantsComponent implements OnInit {
             });
           });
       },
-      columns: [{ data: 'Name' }, 
-                { data: 'ContactName' }, 
-                { data: 'Phone' }, 
-                { data: 'Email' }, 
-                { data: 'Type' }, 
-                { data: 'Country' }, 
-                { data: 'Status' }]
+      columns: [{ data: 'id' }, 
+                { data: 'firstName' }, 
+                { data: 'lastName' }
+               // { data: 'Email' }, 
+               // { data: 'Type' }, 
+               // { data: 'Country' }, 
+               // { data: 'Status' }
+              ]
     };
   }
 }
