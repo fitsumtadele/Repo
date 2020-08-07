@@ -48,8 +48,8 @@ get f() { return this.form.controls; }
             }
             
                 alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value, null, 4));
-               /* login(this.loginModel)
-                    .then(function(result) {
+               /*  this.accountservice.login(this.loginModel)
+                    .toPromise().then(function(result) {
                         //redirect to main
                         if (result.token != undefined && result.token.access_token != undefined) {
                             //check if there exists a return url and route to there ... or else route to home.
@@ -69,13 +69,11 @@ get f() { return this.form.controls; }
                     }, function(error) {
                         //show alert or something
                         console.log(error);
-                    })*/
-
-            
-        }
+                    })
+*/
         // display form values on success
         //alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value, null, 4));
     
     } 
     
-        
+}     
