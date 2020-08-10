@@ -13,7 +13,7 @@
     <div>
         <h2>Welcome to iImport</h2>
         <br/>
-        <form name="loginForm"  
+        <form name="loginForm"  #loginForm="ngForm"
               [formGroup]="form" 
               class="m-t" role="form" 
               (ngSubmit)="Authenticate()"
@@ -51,7 +51,7 @@
                 </div>         
            </div>
             <button  class="btn btn-primary block full-width m-b">Login</button>
-           <p *ngIf="loginFailed" class="alert alert-danger" id="red">Incorrect username or password</p>
+           <p *ngIf="submitted && loginFailed" class="alert alert-danger" id="red">Incorrect username or password</p>
             <a routerLink="/home" routerLinkActive="active"><small>Home</small></a><br/>
             <a routerLink="/forgot" routerLinkActive="active"><small>Forgot password?</small></a>
         </form>

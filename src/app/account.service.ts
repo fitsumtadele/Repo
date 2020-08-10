@@ -14,11 +14,13 @@ export class AccountService {
 
 constructor(public commonservice: CommonService, public storageservice: StorageService, private http: HttpClient ) { }
    // var deferred = $q.defer();
-    login (loginModel) {
-        return this.http.post(this.commonservice.buildUrl((AppConst.API_URL.Account.Autenticate), ''), loginModel);
+    login (loginModel, loginForm) {
+        return this.http.post(this.commonservice.buildUrl(AppConst.API_URL.Account.Autenticate) , loginModel)
+        .toPromise().then(this.loginSuccess(Response))
+        
     }
 
-    loginSuccess(response) {
+    loginSuccess(response: any) {
         this.storageservice.set(AppConst.StorageKeys.Token, response.data.token);
         this.storageservice.set(AppConst.StorageKeys.UserInfo, response.data.user);
         this.storageservice.set(AppConst.StorageKeys.Permissions, response.data.permissions);

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { AccountService} from '../../account.service';
 import { CommonService } from 'src/app/common.service';
 import * as _angular_ from "angular";
 import { DeviceDetectorService } from 'ngx-device-detector';
@@ -17,9 +17,9 @@ export class LoginComponent implements OnInit{
 
 form :  FormGroup;
 submitted = false;
-
+loginFailed = false;
 constructor(private formBuilder: FormBuilder, public router: Router, 
-             public commonservice:CommonService,
+             public commonservice:CommonService, public accountservice: AccountService,
             public devicedetector: DeviceDetectorService,/* public location: Location*/) { }
             data = this.devicedetector;
     loginModel = {
@@ -31,7 +31,7 @@ constructor(private formBuilder: FormBuilder, public router: Router,
             browserVersion: this.data.browser_version
                 }
             };
-            loginFailed = false;
+            
 ngOnInit() {
     this.form = this.formBuilder.group({
         userName: ['', Validators.required],
@@ -41,15 +41,16 @@ ngOnInit() {
 get f() { return this.form.controls; }
 
   
-        Authenticate() {
+    Authenticate(loginForm) {
             this.submitted = true;
             if (this.form.invalid) {
                 return;
             }
             
-                alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value, null, 4));
-               /*  this.accountservice.login(this.loginModel)
-                    .toPromise().then(function(result) {
+                
+                // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value, null, 4));
+                 this.accountservice.login(this.loginModel, loginForm)
+                    .then(function(result) {
                         //redirect to main
                         if (result.token != undefined && result.token.access_token != undefined) {
                             //check if there exists a return url and route to there ... or else route to home.
@@ -60,7 +61,7 @@ get f() { return this.form.controls; }
                                 this.commonservice.resetReturnUrl();
 
                             } else {
-                                this.router.navigate('home');
+                                this.router.navigate(['/home']);
                             }
 
                         } else {
@@ -69,11 +70,12 @@ get f() { return this.form.controls; }
                     }, function(error) {
                         //show alert or something
                         console.log(error);
+                        
                     })
-*/
-        // display form values on success
-        //alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value, null, 4));
+
+                         // display form values on success
+                         //alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value, null, 4));
     
-    } 
+       } 
     
 }     
