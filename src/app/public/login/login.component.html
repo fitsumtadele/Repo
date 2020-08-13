@@ -16,7 +16,7 @@
         <form name="loginForm"  #loginForm="ngForm"
               [formGroup]="form" 
               class="m-t" role="form" 
-              (ngSubmit)="Authenticate()"
+              (ngSubmit)="Authenticate(loginForm)"
               >
             <div class="form-group">
                 <input type="text"

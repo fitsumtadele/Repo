@@ -130,7 +130,7 @@ resetReturnUrl() {
 //    return angular.isDefined(data) && data !== null;
 //}
 
-LoadSavedDataTableStatus (settings, data) {
+LoadSavedDataTableStatus (settings:any, data:any) {
     var o;
 
     o = JSON.parse(localStorage.getItem('DataTables_' + settings.sInstance + '_/' + settings.sTableId))

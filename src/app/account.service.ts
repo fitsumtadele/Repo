@@ -14,8 +14,8 @@ export class AccountService {
 
 constructor(public commonservice: CommonService, public storageservice: StorageService, private http: HttpClient ) { }
    // var deferred = $q.defer();
-    login (loginModel, loginForm) {
-        return this.http.post(this.commonservice.buildUrl(AppConst.API_URL.Account.Autenticate) , loginModel)
+    login (loginModel, username: string, password: string) {
+        return this.http.post(this.commonservice.buildUrl(AppConst.API_URL.Account.Autenticate) , loginModel && { username , password } )
         .toPromise().then(this.loginSuccess(Response))
         
     }

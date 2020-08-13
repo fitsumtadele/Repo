@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+ import { Observable } from 'rxjs';
+ import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AccountService} from '../../account.service';
 import { CommonService } from 'src/app/common.service';
 import * as _angular_ from "angular";
 import { DeviceDetectorService } from 'ngx-device-detector';
+import { AppConst } from '../../helper/constants';
 declare global {
     const angular: typeof _angular_;
   }
@@ -20,7 +23,7 @@ submitted = false;
 loginFailed = false;
 constructor(private formBuilder: FormBuilder, public router: Router, 
              public commonservice:CommonService, public accountservice: AccountService,
-            public devicedetector: DeviceDetectorService,/* public location: Location*/) { }
+            public devicedetector: DeviceDetectorService,public http: HttpClient) { }
             data = this.devicedetector;
     loginModel = {
          clientInfo: {
@@ -48,8 +51,8 @@ get f() { return this.form.controls; }
             }
             
                 
-                // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value, null, 4));
-                 this.accountservice.login(this.loginModel, loginForm)
+              //  alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value, null, 4));
+                 this.accountservice.login(this.loginModel, loginForm.value.userName, loginForm.value.password)
                     .then(function(result) {
                         //redirect to main
                         if (result.token != undefined && result.token.access_token != undefined) {
@@ -77,5 +80,7 @@ get f() { return this.form.controls; }
                          //alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value, null, 4));
     
        } 
+    
+ 
     
 }     
