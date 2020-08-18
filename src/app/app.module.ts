@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { DataTablesModule } from 'angular-datatables';
 import { ApplicantsComponent } from './public/applicants/applicants.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegisteredComponent } from './public/registered/registered.component';
+import { SuspendedComponent } from './public/suspended/suspended.component';
+import { CancelledComponent } from './public/cancelled/cancelled.component';
 
 
 
@@ -15,7 +18,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
 routingComponent,
-ApplicantsComponent
+ApplicantsComponent,
+RegisteredComponent,
+SuspendedComponent,
+CancelledComponent
   ],
   imports: [
     BrowserModule,

@@ -19,8 +19,8 @@ export class CommonService {
 };
 
 buildUrlObj(resourceUrl, obj) {
-    //const rootApiUrl = Config.env.development.local.EnvironmentConfig.RootAPIURL;
-    const rootApiUrl = 'http://api.iimportfeature.hcmis.org/api/';
+    const rootApiUrl = Config.env.development.local.EnvironmentConfig.RootAPIURL;
+   // const rootApiUrl = 'http://api.iimportfeature.hcmis.org/api/';
     const properties = _.keys(obj);
     _.each(properties, (prop) => {
         if (!_.isUndefined(obj[prop])) {

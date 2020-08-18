@@ -39,28 +39,26 @@
             <thead>
               <tr>
                 <th>id</th>
-                <th>Name</th>
-                <th>Contact Name</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <th>Type</th>
-                <th>Country</th>
-                <th>Status</th>
+                <th>Medicine</th>
+                <th>Applicant</th>
+                <th>Approval Date</th>
+                <th>Expiry Date</th>
+                <th>License Holder</th>
+                <th>Manufacturer</th>
               </tr>
             </thead>
-            <tbody *ngIf="persons?.length != 0">
-                <tr *ngFor="let person of persons">
-                    <td>{{ person.id }}</td>
-                    <td>{{ person.name }}</td>
-                    <td>{{ person.contactPerson }}</td>
-                    <td>{{ person.phone }}</td>
-                    <td>{{ person.email }}</td>
-                    <td>{{ person.agentTypeName }}</td>
-                    <td>{{ person.countryName }}</td>
-                    <td>{{ person.isActive }}</td>
+            <tbody *ngIf="items?.length != 0">
+                <tr *ngFor="let item of items">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.fullItemName }}</td>
+                    <td>{{ item.agentName }}</td>
+                    <td>{{ item.registrationDate}}</td>
+                    <td>{{ item.expiryDate }}</td>
+                    <td>{{ item.supplierName }}</td>
+                    <td>{{ item.manufacturerName }}</td>
                 </tr>
             </tbody>
-            <tbody *ngIf="persons?.length == 0">
+            <tbody *ngIf="items?.length == 0">
               <tr>
                 <td colspan="3" class="no-data-available">No data!</td>
               </tr>

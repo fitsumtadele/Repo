@@ -5,15 +5,14 @@ import { CommonService } from 'src/app/common.service';
 import { AppConst } from 'src/app/helper/constants';
 
 
-class Person {
+class Item {
   id: Number;
-  name: string;
-  contactPerson: string;
-  phone: Number;
-  email: string;
-  agentTypeName: string;
-  countryName: string;
-  isActive: string;
+  fullItemName: string;
+  agentName: string;
+  registrationDate: Number;
+  expiryDate: string;
+  supplierName: string;
+  manufacturerName: string;
 }
 
 class DataTablesResponse {
@@ -25,13 +24,13 @@ class DataTablesResponse {
 
 
 @Component({
-  selector: 'app-applicants',
-  templateUrl: './applicants.component.html',
-  styleUrls: ['./applicants.component.less']
+  selector: 'app-registered',
+  templateUrl: './registered.component.html',
+  styleUrls: ['./registered.component.less']
 })
-export class ApplicantsComponent implements OnInit {
+export class RegisteredComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
-  persons: Person[];
+  items: Item[];
 
   constructor(private http: HttpClient, public commonservice: CommonService) {}
   
@@ -52,10 +51,10 @@ export class ApplicantsComponent implements OnInit {
           .post<DataTablesResponse>(
           //  'http://api.iimportfeature.hcmis.org/api/Public/Agent/List'
           // 'http://192.168.2.81:8084/api/Public/Agent/List',
-          this.commonservice.buildUrl(AppConst.API_URL.Public.AgentList),
+          this.commonservice.buildUrl(AppConst.API_URL.Public.ProductList),
             dataTablesParameters, {}
           ).subscribe(resp => {
-            this.persons = resp.data;
+            this.items = resp.data;
             console.log(resp);
 
             callback({
@@ -66,13 +65,12 @@ export class ApplicantsComponent implements OnInit {
           });
       },
       columns: [{ data: 'id' }, 
-                { data: 'name' }, 
-                { data: 'contactPerson' },
-                { data: 'phone' }, 
-                { data: 'email' }, 
-                { data: 'agentTypeName' }, 
-                { data: 'countryName' },
-                { data: 'isActive' }
+                { data: 'fullItemName' }, 
+                { data: 'agentName' },
+                { data: 'registrationDate' }, 
+                { data: 'expiryDate' }, 
+                { data: 'supplierName' }, 
+                { data: 'manufacturerName' }
               ]
     };
   }

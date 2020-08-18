@@ -52,7 +52,7 @@ get f() { return this.form.controls; }
             
                 
               //  alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value, null, 4));
-                 this.accountservice.login(this.loginModel, loginForm.value.userName, loginForm.value.password)
+                 /*this.accountservice.login(this.loginModel, loginForm.value.userName, loginForm.value.password)
                     .then(function(result) {
                         //redirect to main
                         if (result.token != undefined && result.token.access_token != undefined) {
@@ -74,7 +74,7 @@ get f() { return this.form.controls; }
                         //show alert or something
                         console.log(error);
                         
-                    })
+                    })*/
 
                          // display form values on success
                          //alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value, null, 4));

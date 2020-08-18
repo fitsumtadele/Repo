@@ -1,19 +1,88 @@
-html,body{font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #2f4050;
-  font-size: 13px;
-  color: #676a6c;
+#login-box{
+  background-image: url(../../../assets/images/patterns/header-profile.png);
+  background-size: cover;
+  padding-top: 3%;
+  padding-bottom: 5%; 
+}
+/* Login Section */
+.login-inner-box{
+
+  width:80%;
+  margin-left:auto;
+  margin-right:auto;
+  box-shadow: 0 0 6px #cecaca;
+  border-radius: 5px;
+ 
+  padding: 3rem;
   text-align: center;
-  padding: auto;
-  display: block;
-  height: 900px;
-  margin: 0;
-  position: static;
-  overflow-x: hidden;
-  line-height: 1.42857143;
-  }
-  *{
-    box-sizing: border-box;
-  }
+  background-color: snow ;
+ 
+  
+}
+ input[type="text"],input[type="password"]{
+  border-radius:0px !important;
+}
+button{
+  border-radius:15px;
+}
+#fmhacaLogo_login img{
+  padding-top: 40px;
+  height:150px;
+  width:100px;
+}
+img {
+  vertical-align: middle;
+}
+#fmhacaLogo_login p{
+  
+  font-size:100%;
+  padding: 6px 13px;
+
+}
+
+/* --Login Section-- */
+/* Side Section */
+.side-section{
+ background-image: url('../../../assets/images/patterns/shattered.png');
+ height: 50rem;
+}
+/* --Side Section-- */
+
+
+
+
+
+
+/* 
+.login-block{
+  background:#1ab394;
+  float:left;
+  height: 100%;
+
+}
+
+
+
+h4{font-size:120%; color: #f1ecec }
+.login-content{
+  padding-top: 0px;
+  padding-right: 80px;
+  padding-bottom: 0px;
+  padding-left: 80px;
+}
+.login-sec{
+  background:#fafafa;
+  padding: 50px 30px; 
+  height: 100%;
+
+}
+.title-sec {
+  background:#1ab394;
+  color: #fafafa;
+  padding: 70px 30px; 
+  height: 100%;
+}
+  
   a{
     color: #337ab7;
   text-decoration: none;
@@ -29,31 +98,27 @@ html,body{font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-ser
     #fmhacaLogo_login p{
       
       font-size:100%;
-      color: white;
       padding: 6px 13px;
     
     }
    
-      .middle-box {
-        max-width: 400px;
-        z-index: 100;
-        margin: 0 auto;
-        padding-top: 40px;
-    } 
-    .form-control {
-      border: 1px solid #e5e6e7;
-      border-radius: 1px;
-      display: block;
-      padding: 6px 12px;
-      width: 100%;
-      font-size: 14px;
-      margin-top: 10px;
+   .row{
+      padding: 0;
+      margin: 0;
+      border-color: #fafafa;
+      height: 100% !important;
+  }
+     
+    
+      .form-control {
+        border: 0;
+        border-bottom: 1px solid #a2a2a2;
+        background:#fafafa; 
+        font-size: 18px;
+        color: #a4a4a4;
     }
-    .loginscreen.middle-box {
-      width: 300px;
-      padding: auto;
-  
-    }
+    
+
     .btn-primary {
       background-color: #1ab394;
       border-color: #1ab394;
@@ -135,4 +200,4 @@ html,body{font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-ser
 #red{
   color: rgb(255, 160, 169);
   font-weight: 100;
-}
+} */

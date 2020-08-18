@@ -8,6 +8,9 @@ import { AboutUsComponent } from './public/about-us/about-us.component';
 import { ForgotComponent } from './public/forgot/forgot.component';
 import { ContactUsComponent } from './public/contact-us/contact-us.component';
 import { ApplicantsComponent } from './public/applicants/applicants.component'
+import { SuspendedComponent } from './public/suspended/suspended.component';
+import { CancelledComponent } from './public/cancelled/cancelled.component';
+import { RegisteredComponent } from './public/registered/registered.component'
 
 
 const routes: Routes = [
@@ -18,7 +21,10 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'forgot', component: ForgotComponent },
   { path: 'contact-us', component: ContactUsComponent },
-  {path: 'applicants', component: ApplicantsComponent}
+  {path: 'applicants', component: ApplicantsComponent},
+  {path: 'suspended', component:SuspendedComponent},
+  {path: 'cancelled', component:CancelledComponent},
+  {path: 'registered', component:RegisteredComponent}
 ];
 
 @NgModule({
@@ -32,4 +38,5 @@ export const routingComponent = [  LoginComponent,
   AboutUsComponent,
   ForgotComponent,
 ContactUsComponent,
-ApplicantsComponent]
+ApplicantsComponent,
+SuspendedComponent]

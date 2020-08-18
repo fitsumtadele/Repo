@@ -1,17 +1,96 @@
-<html>
-<head>
-    <meta name="viewport" content="width=device-width">
+<section id = "login-box">
+    <div class="contiainer login-inner-box align-item-center">
+        <div class="row">
+            <div class="col-md-5">
+                <div id="fmhacaLogo_login">
+                    <img src="assets/images/FDRE.png">
+                    <p>FOOD, MEDICINE AND HEALTH CARE ADMINISTRATION AND CONTROL AUTHORITY OF ETHIOPIA</p>
+                </div>
+                <div class="login-sec">
+                    <br/>
+                    <form name="loginForm"  #loginForm="ngForm"
+                        [formGroup]="form" 
+                        class="m-t" role="form" 
+                        (ngSubmit)="Authenticate(loginForm)"
+                        >
+                        <div class="form-group">
+                            <input type="text"
+                                class="form-control"
+                                name="username" 
+                                formControlName="userName"
+                                id="userName"
+                                placeholder="Username" 
+                                [ngClass]="{'is-invalid': submitted && f.userName.errors}"
+                                
+                            >
+                            <div class="invalid-feedback"  *ngIf="submitted && f.userName.errors">
+                            <div class=" alert alert-danger" id="red">Username is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password"
+                                id="userPw"
+                                formControlName="password" 
+                                class="form-control" 
+                                placeholder="Password"
+                                [ngClass]="{'is-invalid': submitted && f.password.errors}"
+                            
 
-</head>
-<body>
-<div class="middle-box text-center loginscreen  animated in-down" style="align-items:center">
-    <!-- Logo-->
+                            >
+                            <div class="invalid-feedback"  *ngIf="submitted && f.password.errors"
+                            >
+                                <div *ngIf="f.password.errors.required" 
+                                    class=" alert alert-danger" id="red">Password is required</div>
+                                <div *ngIf="f.password.errors.minlength" 
+                                    class=" alert alert-danger" id="red">Password must be atleast 6</div>
+                            </div>         
+                    </div>
+                        <button  class="btn btn-success btn-block full-width m-b">Login</button> <br>
+                    <p *ngIf="submitted && loginFailed" class="alert alert-danger" id="red">Incorrect username or password</p><br/>
+                        <a routerLink="/home" routerLinkActive="active" ><small> <span class="fa fa-home fa-2x"></span> Home</small></a><br/>
+                        <a routerLink="/forgot" routerLinkActive="active"><small>Forgot password?</small></a>
+                    </form>
+                    <p class="m-t"> <small><strong>Version</strong>&nbsp;app_version</small> </p>
+
+                </div>
+            </div>
+            <div class="col-md-7 side-section">
+                <h4 class="text-center">Welcome to Food, Medicine and Health Care Administration and Control Authority of Ethiopia</h4>
+               
+            </div>
+        </div>
+    </div> 
+</section>
+
+<!-- 
+ <section class="login-block">  
+<div class="row">
+    <div class="col-sm-12 col-md-7  title-sec">
+        <div class="login-content">
+          <h1 class="text-center">Welcome to Food, Medicine and Health Care Administration and Control Authority of Ethiopia</h1>
+          <br>
+          <br>
+          <br>
+          <br>
+          
+          <h4>VISION</h4>
+          <blockquote>
+            etc...
+          </blockquote>
+          <h4>MISSION</h4>
+          <blockquote>            
+           etc...
+          </blockquote>
+          
+        </div>
+    </div>
+ <div class="col-sm-12 col-md-5 middle-box text-center login-sec  animated in-down ">
+   
     <div id="fmhacaLogo_login">
         <img src="assets/images/FDRE.png">
         <p>FOOD, MEDICINE AND HEALTH CARE ADMINISTRATION AND CONTROL AUTHORITY OF ETHIOPIA</p>
     </div>
-    <div>
-        <h2>Welcome to iImport</h2>
+    <div class="login-sec">
         <br/>
         <form name="loginForm"  #loginForm="ngForm"
               [formGroup]="form" 
@@ -58,7 +137,9 @@
         <p class="m-t"> <small><strong>Version</strong>&nbsp;app_version</small> </p>
 
     </div>
+ </div>
 </div>
-</body>
-</html>
-<router-outlet></router-outlet>
+</section>
+
+
+<router-outlet></router-outlet> -->
