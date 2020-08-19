@@ -1,121 +1,42 @@
-#fmhacaLogo img {
-    margin-left: 25%;
-    margin-right: 20px;
-    float: left;
-    height: 45px;
-    width: 45px;
-}
-img {
-    vertical-align: left;
+@media (min-width:425px){
+  .wrapper{
+    margin-top: 100px;
+  }
 }
 
-img {
-    margin-top: 0;
-    border-width: 0px;
-    border-style: initial;
-    border-color: initial;
-    border-image: initial;
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      -webkit-transform: translatey(-120px);
+      -moz-transform: translatey(-120px);
+      -o-transform: translatey(-120px);
+      transform: translatey(-120px);
+  }
+  to {
+      opacity: 1;
+      -webkit-transform: translatey(0);
+      -moz-transform: translatey(0);
+      -o-transform: translatey(0);
+      transform: translatey(0);
+  }
 }
 
-* {
-    box-sizing: border-box;
+.in-down {
+  -webkit-animation-name: fadeInDown;
+  -moz-animation-name: fadeInDown;
+  -o-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
 }
-.landing-page .navbar-default #fmhacaLogo {
-    color: #676a6c;
-}
-.text-center {
-    color: #676a6c;
-    margin-top: 30px;
-}
-.topnav {
-    overflow: hidden;
-    margin-right: 10px;
-  }
-
-  
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    float: right;
-    color: #676a6c;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: 700;
-  }
-  
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: #f2f2f2;
-    color: #676a6c;
-  }
-  .topnav a.active:hover {
-    background-color: #f2f2f2;
-    color: #676a6c;
-  }
-  /* Add a color to the active/current link */
-  .topnav a.active {
-          color: #676a6c;
-  }
-  .dropdown {
-      color: #676a6c;
-    float: right;
-    overflow: hidden;
-    
-  }
-  
-  /* Dropdown button */
-  .dropdown .dropbtn {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: #676a6c;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit; /* Important for vertical align on mobile phones */
-    margin: 0; /* Important for vertical align on mobile phones */
-    font-weight: 700;
-  }
-  
-  /* Add a red background color to navbar links on hover */
-  .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: #f2f2f2;
-    color: darkslategrey;
-  }
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  .dropdown-content a {
-    float: none;
-    color: #676a6c;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    font-weight: 700;
-  }
-  
-  /* Add a grey background color to dropdown links on hover */
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {
-    display: block;
-    float: right;
-  }
 
 
-
-h1{
-  text-align: center;
-}
 
   .ibox-content {
     clear: both;

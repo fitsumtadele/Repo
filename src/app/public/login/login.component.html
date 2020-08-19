@@ -1,10 +1,10 @@
 <section id = "login-box">
     <div class="contiainer login-inner-box align-item-center">
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-5 left-side">
                 <div id="fmhacaLogo_login">
-                    <img src="assets/images/FDRE.png">
-                    <p>FOOD, MEDICINE AND HEALTH CARE ADMINISTRATION AND CONTROL AUTHORITY OF ETHIOPIA</p>
+                   <img src="assets/images/FDRE.png">
+                    <p>FOOD, MEDICINE AND HEALTH CARE ADMINISTRATION AND CONTROL AUTHORITY OF ETHIOPIA</p><br>
                 </div>
                 <div class="login-sec">
                     <br/>
@@ -20,14 +20,13 @@
                                 formControlName="userName"
                                 id="userName"
                                 placeholder="Username" 
-                                [ngClass]="{'is-invalid': submitted && f.userName.errors}"
-                                
+                                [ngClass]="{'is-invalid': submitted && f.userName.errors}"   
                             >
                             <div class="invalid-feedback"  *ngIf="submitted && f.userName.errors">
                             <div class=" alert alert-danger" id="red">Username is required</div>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group"> 
                             <input type="password"
                                 id="userPw"
                                 formControlName="password" 
@@ -55,8 +54,60 @@
                 </div>
             </div>
             <div class="col-md-7 side-section">
-                <h4 class="text-center">Welcome to Food, Medicine and Health Care Administration and Control Authority of Ethiopia</h4>
-               
+                <div id="fmhacaLogo_login">
+                    <h4 class="text-center text-uppercase">Welcome to Food, Medicine and Health Care Administration and Control Authority of Ethiopia</h4>
+                </div>
+                <hr>
+                
+                <div class="media">
+                    <div class="media-left media-middle">
+                      <img src="../../../assets/images/patterns/iLicense.png" class="media-object" style="width:150px;">
+                    </div>
+                    <div class="media-body text-left">
+                      
+                      <p>iLicense is an online application that allows importers, exporters, 
+                        wholesalers and manufacturers to apply for the certificate of competency and FMHACA staff to manage these applications online.</p>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <div class="media-left media-middle">
+                      <img src="../../../assets/images/patterns/iregister.png" class="media-object" style="width:150px;">
+                    </div>
+                    <div class="media-body text-left">
+                      
+                      <p> iRegister is an online application which allows importers to apply for and
+                        receive medicine registration certificate to import medicines online and EFDA staff to manage these applications online.</p>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <div class="media-left media-middle">
+                      <img src="../../../assets/images/patterns/iImport.png" class="media-object" style="width:150px;">
+                    </div>
+                    <div class="media-body text-left">
+                      
+                      <p>iImport is an online application which allows importers to apply for and receive permits to import medicines online and 
+                        EFDA staff to manage these applications online.</p>
+                    </div>
+                  </div>
+               <!--  <span><img src="../../../assets/images/patterns/iLicense.png" style="width: 25%; ;"></span>
+
+          <p class="text-left">
+            iLicense is an online application that allows importers, exporters, 
+            wholesalers and manufacturers to apply for the certificate of competency and FMHACA staff to manage these applications online.
+          </p>
+          <span><img src="../../../assets/images/patterns/iregister.png" style="width: 25%;;"></span>
+
+          <p class="text-left">            
+            iRegister is an online application which allows importers to apply for and
+             receive medicine registration certificate to import medicines online and EFDA staff to manage these applications online.
+          </p>
+          <span><img src="../../../assets/images/patterns/iImport.png" style="width: 25%;;"></span>
+          <p class="text-left">            
+            iImport is an online application which allows importers to apply for and receive permits to import medicines online and 
+            EFDA staff to manage these applications online.
+          </p> -->
+
+          
             </div>
         </div>
     </div> 

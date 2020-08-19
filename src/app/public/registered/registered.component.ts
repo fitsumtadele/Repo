@@ -39,7 +39,7 @@ export class RegisteredComponent implements OnInit {
 
     this.dtOptions = {
       pagingType: 'full_numbers',
-      pageLength: 3,
+      pageLength: 25,
       serverSide: true,
       responsive: true,
       language: AppConst.UIConfig.DataTable.Language,

@@ -1,21 +1,21 @@
 #login-box{
   background-image: url(../../../assets/images/patterns/header-profile.png);
   background-size: cover;
-  padding-top: 3%;
-  padding-bottom: 5%; 
+  padding-top: 4%;
+  padding-bottom: 9%; 
 }
 /* Login Section */
 .login-inner-box{
 
-  width:80%;
+  width:70%;
   margin-left:auto;
   margin-right:auto;
   box-shadow: 0 0 6px #cecaca;
   border-radius: 5px;
  
-  padding: 3rem;
+  
   text-align: center;
-  background-color: snow ;
+  background-image: url(../../../assets/images/patterns/pattern.png);
  
   
 }
@@ -27,13 +27,13 @@ button{
 }
 #fmhacaLogo_login img{
   padding-top: 40px;
-  height:150px;
-  width:100px;
+  height:75px;
+
 }
 img {
   vertical-align: middle;
 }
-#fmhacaLogo_login p{
+#fmhacaLogo_login p,#fmhacaLogo_login h4{
   
   font-size:100%;
   padding: 6px 13px;
@@ -43,9 +43,23 @@ img {
 /* --Login Section-- */
 /* Side Section */
 .side-section{
- background-image: url('../../../assets/images/patterns/shattered.png');
- height: 50rem;
+  
+
+ height: 100%;
+ 
 }
+.side-section hr{
+  border: 1px solid #1ab394 ;
+  border-radius: 3px;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.left-side{
+  background:#cdcff7;
+  height: 100%;
+}
+
 /* --Side Section-- */
 
 
@@ -200,4 +214,4 @@ h4{font-size:120%; color: #f1ecec }
 #red{
   color: rgb(255, 160, 169);
   font-weight: 100;
-} */
+}*/
