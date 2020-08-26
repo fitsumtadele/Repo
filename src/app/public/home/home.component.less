@@ -1,6 +1,7 @@
 
   #fmhacaLogo{
-    float: left;
+    padding-top: 10px;
+    font-size: 13px !important;
   }
   #fmhacaLogo img {
    
@@ -24,13 +25,19 @@ img {
 
 .btn-group{
   padding-top:9px; 
-    color: #676a6c;
+    color: white;
 }
-
+.btn-group > .btn:first-child{
+  color: white;
+}
+.navbar-default .navbar-nav > li > a{
+  color: white;
+}
 
 .fa{
   font-size:5em;
   color:#1ab394;
+  margin-right: 10px;
 }
 
 
@@ -42,25 +49,40 @@ img {
     color: #676a6c;
     overflow-x: hidden;
 }
+li{
+  color: white;
+}
+.navbar{
+  color: white !important;
+}
+.navbar-default {
+  background-color: transparent !important;
+  border-color: transparent;
+  transition: all 0.3s ease-in-out 0s;
+  box-shadow: none;
+
+}
 
  /* BACKGROUNDS SLIDER
   -------------------------------------------------- */
   .header-back {
-    height: 470px;
+    height: 640px;
     width: 100%;
   }
   .header-back.one {
     background: url('../../../assets/images/landing/header_two.png') 50% 0 no-repeat;
+    background-size: cover;
   }
   .header-back.two {
     background: url('../../../assets/images/landing/header_one.jpg') 50% 0 no-repeat;
+    background-size: cover;
   }
  
   /* CUSTOMIZE THE CAROUSEL
   -------------------------------------------------- */
   /* Carousel base class */
   .carousel {
-    height: 470px;
+    height: 620px;
   }
   /* Since positioning the image, we need to help out the caption */
   .carousel-caption {
@@ -68,7 +90,7 @@ img {
   }
   /* Declare heights because of positioning of img element */
   .carousel .carousel-item {
-    height: 470px;
+    height: 620px;
     background-color: #777;
   }
   .carousel-inner > .carousel-item > img {
@@ -76,7 +98,7 @@ img {
     top: 0;
     left: 0;
     min-width: 100%;
-    height: 470px;
+    height: 620px;
   }
   .carousel-fade .carousel-inner .carousel-item {
     opacity: 0;

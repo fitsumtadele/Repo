@@ -1,14 +1,59 @@
+
 <div class="bg-img">
   <div class="pace-done landing-page"  id="page-top">
-    <app-navigation></app-navigation>
+    
+<div class="navbar-wrapper">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header page-scroll" style="min-width:49%">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!--<a  ui-sref="dashboards.dashboard_1">WEBAPPLAYERS</a>-->
+        <div  id="fmhacaLogo" class="text-center">
+            <img src="assets/images/FDRE.png" alt="logo"/>
+            <span lang="am">የኢትዮጵያ የምግብ፣ የመድኃኒት እና የጤና ክብካቤ አስተዳደርና ቁጥጥር ባለስልጣን</span>
+            <br/>
+            <span >Food, Medicine and Health Care Administration and Control Authority of Ethiopia</span>
+        </div>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="page-scroll" page-scroll ><a  routerLink="/home" routerLinkActive="active">Home</a></li>
+          <li >
+          <div class="btn-group" dropdown>
+            <a id="button-basic" dropdownToggle type="button" class="btn  dropdown-toggle"
+                    aria-controls="dropdown-basic">
+                    Products <span class="caret"></span>
+          </a>
+            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                role="menu" aria-labelledby="button-basic">
+              <li role="menuitem"><a class="dropdown-item" routerLink="/registration" routerLinkActive="active">Registration</a></li>
+              <li role="menuitem"><a class="dropdown-item" routerLink="/registered" routerLinkActive="active">Registered</a></li>
+              <li role="menuitem"><a class="dropdown-item" routerLink="/suspended" routerLinkActive="active">Suspended</a></li>
+              <li role="menuitem"><a class="dropdown-item" routerLink="/cancelled" routerLinkActive="active">Cancelled</a></li>
+            </ul>
+          </div>
+        </li>
+          <li class="page-scroll" page-scroll><a routerLink="/applicants" routerLinkActive="active">Applicants</a></li>
+          <li class="page-scroll" page-scroll><a  routerLink="/about-us" routerLinkActive="active">About us</a></li>
+          <li class="page-scroll" page-scroll ><a routerLink="/contact-us" routerLinkActive="active">Contact us</a></li>
+          <li class="page-scroll" page-scroll><a routerLink="/login" routerLinkActive="active">Login</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
     <div id="page-wrapper" class="gray-bg">
-      <div style="padding-bottom:20px;" id="view" ui-view="publicView"></div>
+      <div  id="view" ui-view="publicView"></div>
       <!--<div class="gray-bg" ng-include="'app/public/view/templates/footer.html'"></div>-->
     </div>
   </div>
-  
 
-  <!-- this is the end of the top half and begin of the bottom half-->
   <div id="inSlider" class="carousel slide carousel-fade" data-ride="carousel" >
     <ol class="carousel-indicators">
       <li data-target="#inSlider" data-slide-to="0" class="active" ></li>
@@ -22,14 +67,10 @@
               services and products<br/>
               to all citizens.<br/>
               </h1>
-            <!--<p>Lorem Ipsum is simply dummy text of the printing.</p>-->
-            <!--<p>
-              <a class="btn btn-lg btn-primary" role="button">READ MORE</a>
-              <a class="caption-link"  role="button">Inspinia Theme</a>
-            </p>-->
+              <br/>
           </div>
           <div class="carousel-image wow zoomIn">
-            <!--<img src="../../../assets/images/galleria6.jpg" alt="medicine"/>-->
+
           </div>
         </div>
         <!-- Set background for slide in css -->
@@ -59,64 +100,99 @@
   </div>
 
   
-<section class="features white-bg">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <div class="navy-line"></div>
-        <h1>EFMHACA</h1>
-        <!--<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. </p>-->
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-5 col-lg-offset-1 features-text">
-        <h2>Organization</h2>
-        <i class="fa fa-bar-chart big-icon pull-right"></i>
-        <p>
-          The Ethiopian Food, Medicines and Health care administration and Control Authority (EFMHACA) is the National
-          Regulatory Body of Ethiopia which is under the Ministry of Health. The Authority is responsible to ensure the
-          quality, safety and/or efficacy of medicines, food, cosmetics and medical devices, the standards of health and
-          health related institutions, the healthcare practice, and competence and ethics of Health professionals.
-        </p>
-      </div>
-      <div class="col-lg-5 features-text">
-        <h2>Establishment</h2>
-        <i class="fa fa-bolt big-icon pull-right"></i>
-        <p>
-          EFMHACA was established under the Ethiopian Food, Medicines and Health care Administration and Control Authority
-          establishment council of Ministers Regulation No. 189/2010. After repealing the drug administration and control
-          proclamation 176/1999, FMHACA became operational as of July 17, 2010. Its budget is from the Ethiopian government.
-          It is mandated by the Food,Medicines and Health care Administration and Control proclamation 661/2009.
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-5 col-lg-offset-1 features-text">
-        <h2>Objectives </h2>
-        <i class="fa fa-clock-o big-icon pull-right"></i>
-          <p>
-            To protect the health of consumers by ensuring:-
-            <ul>
-              <li>Food safety and quality</li>
-              <li>Safety, efficacy, quality and proper use of medicines</li>
-              <li>Competence and ethics of health professionals</li>
-              <li>The standards of health institution and</li>
-              <li>The hygiene and environmental health protection suitability for individuals and community health</li>
-            </ul>
-          
-      </div>
-      <div class="col-lg-5 features-text">
-        <h2>Mission </h2>
-        <i class="fa fa-users big-icon pull-right"></i>
-        <p>
-          To promote and protect the public health by ensuring safety, efficacy and quality of health and health related
-          products and services through product quality assessment and registration; licensing and inspection of health
-          professionals, health institutions, pharmaceutical and food establishments, and provision of up-to-date
-          regulatory information while promoting proper use of health and health related products and services
-          including proper use of medicines.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+  <div id="content-wrapper">
+    <section id="services" class="white">
+        <div class="container">
+        <div class="gap"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="center gap fade-down section-heading">
+                      <br/><br/>
+                        <h2 class="main-title text-center">EFMHACA</h2>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="service-block">
+                        <div class="pull-left bounce-in">
+                            <i class="fa fa-bar-chart big-icon " ></i>
+                        </div>
+                        <div class="media-body fade-up">
+                            <h3 class="media-heading">Organization</h3>
+                            <p> 
+                                The Ethiopian Food, Medicines and Health care administration and Control Authority (EFMHACA) is the National
+                                Regulatory Body of Ethiopia which is under the Ministry of Health. The Authority is responsible to ensure the
+                                quality, safety and/or efficacy of medicines, food, cosmetics and medical devices, the standards of health and
+                                health related institutions, the healthcare practice, and competence and ethics of Health professionals.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="service-block">
+                        <div class="pull-left bounce-in">
+                            <i class="fa fa-bolt big-icon" style="margin-left: 40px;"></i>
+                        </div>
+                        <div class="media-body fade-up">
+                            <h3 class="media-heading">Establishment</h3>
+                            <p> 
+                                EFMHACA was established under the Ethiopian Food, Medicines and Health care Administration and Control Authority
+                                establishment council of Ministers Regulation No. 189/2010. After repealing the drug administration and control
+                                proclamation 176/1999, FMHACA became operational as of July 17, 2010. Its budget is from the Ethiopian government.
+                                It is mandated by the Food,Medicines and Health care Administration and Control proclamation 661/2009.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="gap"></div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="service-block">
+                        <div class="pull-left bounce-in">
+                            <i class="fa fa-clock-o big-icon" style="margin-left: 20px;"></i>
+                        </div>
+                          <div class="media-body fade-up">
+                            <h3 class="media-heading">Objectives </h3>
+                            <p> 
+                                To protect the health of consumers by ensuring:-<br/><br/>
+                                                                   
+                                  * Food safety and quality<br/>
+                                  * Safety, efficacy, quality and proper use of medicines<br/>
+                                  * Competence and ethics of health professionals<br/>
+                                  * The standards of health institution and<br/>
+                                  * The hygiene and environmental health protection suitability for individuals and community health<br/>
+                              </p>      
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="service-block">
+                        <div class="pull-left bounce-in">
+                            <i class="fa fa-users big-icon "></i>
+                        </div>
+                        <div class="media-body fade-up">
+                            <h3 class="media-heading">Mission </h3>
+                            <p> 
+                                To promote and protect the public health by ensuring safety, efficacy and quality of health and health related
+                                products and services through product quality assessment and registration; licensing and inspection of health
+                                professionals, health institutions, pharmaceutical and food establishments, and provision of up-to-date
+                                regulatory information while promoting proper use of health and health related products and services
+                                including proper use of medicines.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+               
+            </div><!--/.row-->
+        </div>
+        </section>
+</div>
+
   <router-outlet></router-outlet>
+  

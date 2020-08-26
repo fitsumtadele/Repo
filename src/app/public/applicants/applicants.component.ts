@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 import { CommonService } from 'src/app/common.service';
 import { AppConst } from 'src/app/helper/constants';
+
 
 
 class Person {
@@ -32,28 +33,33 @@ class DataTablesResponse {
 export class ApplicantsComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   persons: Person[];
+  public headers = new HttpHeaders();
 
   constructor(private http: HttpClient, public commonservice: CommonService) {}
   
 
   ngOnInit(): void {
 
+    let headers;
+    headers = this.headers.set('Content-Type', 'application/x-www-form-urlencoded');
+
     this.dtOptions = {
       pagingType: 'full_numbers',
-      pageLength: 3,
+      pageLength: 25,
+      dom: AppConst.UIConfig.DataTable.DOM.All,
       serverSide: true,
-      responsive: true,
+      responsive: true, 
       language: AppConst.UIConfig.DataTable.Language,
       stateSaveCallback: this.commonservice.SaveDataTableStatus,
     //  stateLoadCallback: this.commonservice.LoadSavedDataTableStatus,
-      processing: true,
+     
       ajax: (dataTablesParameters: any, callback) => {
         this.http
           .post<DataTablesResponse>(
           //  'http://api.iimportfeature.hcmis.org/api/Public/Agent/List'
           // 'http://192.168.2.81:8084/api/Public/Agent/List',
           this.commonservice.buildUrl(AppConst.API_URL.Public.AgentList),
-            dataTablesParameters, {}
+            dataTablesParameters, {headers: headers}
           ).subscribe(resp => {
             this.persons = resp.data;
             console.log(resp);
